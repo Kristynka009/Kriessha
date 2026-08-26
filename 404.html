@@ -4,15 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Stránka nenalezena — Kriessha</title>
-    <meta name="robots" content="noindex"><meta name="theme-color" content="#253026">
-    <link rel="icon" href="/favicon.png" sizes="64x64"><script type="module" src="/src/main.js"></script>
+    <meta name="robots" content="noindex,follow">
+    <meta name="theme-color" content="#fff9e2">
+    <!--
+      Stránka 404 je záměrně plně samostatná (všechno CSS inline, žádné externí soubory).
+      GitHub Pages ji zobrazuje pod libovolnou chybnou adresou, takže relativní cesty
+      na assety by se mohly rozbít. Kořen webu dopočítává skript dole.
+    -->
+    <style>
+      :root {
+        --ivory: #fff9e2;
+        --peach: #feecd0;
+        --pistachio: #ebeccc;
+        --eucalyptus: #cdd4b1;
+        --clay: #dca278;
+        --ink: #2c281f;
+        --ink-soft: #5c5648;
+        --leaf: #4f5840;
+        --foam: #fffdf6;
+        --font-body: "Outfit Variable", "Segoe UI", system-ui, sans-serif;
+        --font-display: "Bricolage Grotesque Variable", "Arial Narrow", system-ui, sans-serif;
+        --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        overflow-x: clip;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 8% 10%, rgba(254, 236, 208, 0.95), transparent 30rem),
+          radial-gradient(circle at 92% 85%, rgba(205, 212, 177, 0.7), transparent 32rem),
+          var(--ivory);
+        font-family: var(--font-body);
+        font-size: clamp(1rem, 0.22vw + 0.95rem, 1.125rem);
+        line-height: 1.58;
+        -webkit-font-smoothing: antialiased;
+      }
+      .card {
+        width: min(42rem, calc(100% - clamp(2rem, 6vw, 6rem)));
+        padding: clamp(2.2rem, 5vw, 4rem);
+        border: 1px solid rgba(79, 88, 64, 0.18);
+        border-radius: clamp(1.5rem, 3vw, 2.5rem);
+        background: rgba(255, 253, 246, 0.72);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 24px 60px rgba(44, 40, 31, 0.08);
+        text-align: center;
+      }
+      .code {
+        margin: 0 0 0.6rem;
+        font-family: var(--font-display);
+        font-size: clamp(4.2rem, 14vw, 7.5rem);
+        font-weight: 720;
+        letter-spacing: -0.05em;
+        line-height: 0.95;
+        background: linear-gradient(120deg, var(--ink) 30%, var(--clay));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      h1 {
+        margin: 0 0 0.8rem;
+        font-family: var(--font-display);
+        font-size: clamp(1.7rem, 4vw, 2.6rem);
+        font-weight: 720;
+        letter-spacing: -0.04em;
+        line-height: 1.02;
+        text-wrap: balance;
+      }
+      p { margin: 0 auto 1.8rem; max-width: 34rem; color: var(--ink-soft); }
+      .actions { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        min-height: 3.2rem;
+        padding: 0.75rem 1.4rem;
+        border-radius: 999px;
+        font-weight: 580;
+        font-size: 0.95rem;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: transform 0.3s var(--ease-out), background 0.25s ease, box-shadow 0.3s ease;
+      }
+      .btn:hover { transform: translateY(-2px); }
+      .btn-primary {
+        color: var(--ink);
+        background: var(--clay);
+        box-shadow: 0 10px 28px rgba(176, 111, 62, 0.22);
+      }
+      .btn-primary:hover { background: #c48655; }
+      .btn-outline {
+        color: var(--ink);
+        border: 1px solid rgba(44, 40, 31, 0.3);
+        background: transparent;
+      }
+      .btn-outline:hover { background: rgba(255, 253, 246, 0.7); border-color: var(--ink); }
+      .hint { margin-top: 1.6rem; font-size: 0.85rem; }
+      .hint code {
+        padding: 0.15rem 0.5rem;
+        border-radius: 0.5rem;
+        background: var(--pistachio);
+        color: var(--leaf);
+        font-size: 0.82em;
+        overflow-wrap: anywhere;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin-bottom: 1.4rem;
+        font-family: var(--font-display);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        font-size: 1.05rem;
+        text-decoration: none;
+        color: var(--ink);
+      }
+      .brand i {
+        width: 1.05rem;
+        height: 1.05rem;
+        border-radius: 50%;
+        background: var(--clay);
+        box-shadow: -0.55rem 0.1rem 0 -0.28rem var(--eucalyptus), 0.55rem 0.1rem 0 -0.28rem var(--pistachio);
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .card { animation: rise 0.7s var(--ease-out) both; }
+        @keyframes rise {
+          from { opacity: 0; transform: translateY(1.2rem); }
+          to { opacity: 1; transform: none; }
+        }
+      }
+      :focus-visible { outline: 2px solid var(--leaf); outline-offset: 4px; border-radius: 999px; }
+    </style>
   </head>
-  <body data-page="404">
-    <a class="skip-link" href="#main-content">Přeskočit na obsah</a><div data-site-header></div>
-    <main id="main-content">
-      <section class="cta-section error-hero" id="top">
-        <div class="shell cta-inner"><div class="cta-copy"><p class="eyebrow">Chyba 404</p><h1 class="display-lg">Tahle stránka se <em>někam zatoulala.</em></h1><p class="text-lead section-copy">Odkaz už možná není aktuální. Vraťte se na úvod nebo si prohlédněte naši tvorbu.</p></div><div class="cta-meta"><a class="btn btn-primary" href="/">Zpět na úvod</a><a class="text-link" href="/portfolio.html">Prohlédnout portfolio</a></div></div>
-      </section>
-    </main><div data-site-footer></div>
+  <body>
+    <main class="card">
+      <a class="brand" href="./" data-root-link><i aria-hidden="true"></i>Kriessha</a>
+      <p class="code" aria-hidden="true">404</p>
+      <h1>Tahle stránka se <em>někam zatoulala.</em></h1>
+      <p>Odkaz už možná není aktuální, nebo je v adrese překlep. Vraťte se na úvod nebo se rovnou podívejte, co tvoříme.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="./" data-root-link>Zpět na úvod</a>
+        <a class="btn btn-outline" href="portfolio.html" data-portfolio-link>Prohlédnout portfolio</a>
+      </div>
+      <p class="hint">Adresa, která nefunguje: <code data-path>—</code></p>
+    </main>
+    <script>
+      // Kořen webu dopočítáme z aktuální adresy — funguje na doméně i pod složkou repozitáře.
+      var path = window.location.pathname;
+      var root = path.endsWith("/") ? path : path.slice(0, path.lastIndexOf("/") + 1);
+      document.querySelectorAll("[data-root-link]").forEach(function (a) {
+        a.setAttribute("href", root);
+      });
+      document.querySelectorAll("[data-portfolio-link]").forEach(function (a) {
+        a.setAttribute("href", root + "portfolio.html");
+      });
+      var hint = document.querySelector("[data-path]");
+      if (hint) hint.textContent = path + window.location.search;
+    </script>
   </body>
 </html>

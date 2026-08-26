@@ -1,12 +1,14 @@
-import "@fontsource-variable/bricolage-grotesque/index.css";
-import "@fontsource-variable/outfit/index.css";
-import "@fontsource-variable/newsreader/index.css";
-import "@fontsource-variable/newsreader/wght-italic.css";
 import "./styles.css";
 
 const page = document.body.dataset.page || "home";
-const currentPath = window.location.pathname;
 
+// Označení aktuální stránky ve statické navigaci (partials vložené při buildu).
+document.querySelectorAll("a[data-nav-page]").forEach((link) => {
+  if (link.dataset.navPage === page) {
+    link.setAttribute("aria-current", "page");
+    link.classList.add("is-current");
+  }
+});
 const iconArrow = `
   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
     <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -19,10 +21,10 @@ const logo = `
   <span class="brand-name">Kriessha</span>`;
 
 const navItems = [
-  ["services", "/sluzby.html", "Služby"],
-  ["portfolio", "/portfolio.html", "Portfolio"],
-  ["about", "/o-nas.html", "O studiu"],
-  ["pricing", "/#cenik", "Ceník"],
+  ["services", "sluzby.html", "Služby"],
+  ["portfolio", "portfolio.html", "Portfolio"],
+  ["about", "o-nas.html", "O studiu"],
+  ["pricing", "cenik.html", "Ceník"],
 ];
 
 const headerTarget = document.querySelector("[data-site-header]");
@@ -31,7 +33,7 @@ if (headerTarget) {
     <header class="site-header" data-header>
       <div class="scroll-progress" data-progress aria-hidden="true"></div>
       <div class="shell header-inner">
-        <a class="wordmark" href="/" aria-label="Kriessha — domovská stránka">${logo}</a>
+        <a class="wordmark" href="./" aria-label="Kriessha — domovská stránka">${logo}</a>
         <nav class="desktop-nav" aria-label="Hlavní navigace">
           ${navItems
             .map(
@@ -42,7 +44,7 @@ if (headerTarget) {
         </nav>
         <div class="header-actions">
           <span class="header-note"><i></i> Praha · na dálku</span>
-          <a class="btn btn-small btn-dark header-cta" href="/kontakt.html">Nezávazně poptat ${iconArrow}</a>
+          <a class="btn btn-small btn-dark header-cta" href="kontakt.html">Nezávazně poptat ${iconArrow}</a>
           <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
             <span class="sr-only">Otevřít menu</span><i></i><i></i>
           </button>
@@ -52,18 +54,18 @@ if (headerTarget) {
         <div class="shell mobile-panel-inner">
           <p class="micro-label">Menu</p>
           <nav aria-label="Mobilní navigace">
-            <a href="/" ${page === "home" ? 'aria-current="page"' : ""}>Domů <span>00</span></a>
+            <a href="./" ${page === "home" ? 'aria-current="page"' : ""}>Domů <span>00</span></a>
             ${navItems
               .map(
                 ([id, href, label], index) =>
                   `<a href="${href}" ${page === id ? 'aria-current="page"' : ""}>${label}<span>0${index + 1}</span></a>`
               )
               .join("")}
-            <a href="/kontakt.html" ${page === "contact" ? 'aria-current="page"' : ""}>Kontakt <span>05</span></a>
+            <a href="kontakt.html" ${page === "contact" ? 'aria-current="page"' : ""}>Kontakt <span>05</span></a>
           </nav>
           <div class="mobile-panel-foot">
             <p>Krátká reklamní videa z vašich fotografií.</p>
-            <a class="btn btn-primary" href="/kontakt.html">Začít projekt ${iconArrow}</a>
+            <a class="btn btn-primary" href="kontakt.html">Začít projekt ${iconArrow}</a>
           </div>
         </div>
       </div>
@@ -76,24 +78,24 @@ if (footerTarget) {
     <footer class="site-footer">
       <div class="shell footer-main">
         <div class="footer-brand">
-          <a class="wordmark wordmark-large" href="/">${logo}</a>
+          <a class="wordmark wordmark-large" href="./">${logo}</a>
           <p>Z vašich fotografií tvoříme krátká videa, která jsou připravená zaujmout i prodávat.</p>
-          <a class="footer-contact-link" href="/kontakt.html">Pojďme probrat váš projekt ${iconArrow}</a>
+          <a class="footer-contact-link" href="kontakt.html">Pojďme probrat váš projekt ${iconArrow}</a>
         </div>
         <div class="footer-nav-group">
           <p class="micro-label">Studio</p>
-          <a href="/sluzby.html">Služby</a>
-          <a href="/portfolio.html">Portfolio</a>
-          <a href="/o-nas.html">O studiu</a>
-          <a href="/#cenik">Ceník</a>
-          <a href="/kontakt.html">Kontakt</a>
+          <a href="sluzby.html">Služby</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="o-nas.html">O studiu</a>
+          <a href="cenik.html">Ceník</a>
+          <a href="kontakt.html">Kontakt</a>
         </div>
         <div class="footer-nav-group">
           <p class="micro-label">Informace</p>
-          <a href="/ochrana-soukromi.html">Ochrana soukromí</a>
-          <a href="/cookies.html">Zásady cookies</a>
-          <a href="/obchodni-podminky.html">Obchodní podmínky</a>
-          <a href="/pristupnost.html">Přístupnost</a>
+          <a href="ochrana-soukromi.html">Ochrana soukromí</a>
+          <a href="cookies.html">Zásady cookies</a>
+          <a href="obchodni-podminky.html">Obchodní podmínky</a>
+          <a href="pristupnost.html">Přístupnost</a>
           <button type="button" data-cookie-settings>Nastavení soukromí</button>
         </div>
         <div class="footer-studio">
@@ -101,6 +103,9 @@ if (footerTarget) {
           <p>Praha, Česko<br />Spolupráce po celé ČR</p>
           <span class="availability"><i></i> Poptávky přijímáme online</span>
         </div>
+      </div>
+      <div class="shell footer-legal-note">
+        <p>Web provozuje kreativní studio <strong>Kriessha</strong>, Praha. Úplné identifikační údaje provozovatele (jméno, sídlo, IČO a kontaktní e-mail) jsou zveřejněny v <a href="ochrana-soukromi.html">dokumentu o ochraně osobních údajů</a> a budou doplněny před veřejným spuštěním. Používání webu se řídí <a href="obchodni-podminky.html">obchodními podmínkami</a> a <a href="cookies.html">zásadami cookies</a>.</p>
       </div>
       <div class="shell footer-bottom">
         <p>© <span data-year></span> Kriessha. Všechna práva vyhrazena.</p>
@@ -142,7 +147,7 @@ privacyUi.innerHTML = `
         <span class="always-off">Neaktivní</span>
       </div>
       <div class="dialog-actions">
-        <a href="/cookies.html" class="text-link">Přečíst zásady cookies</a>
+        <a href="cookies.html" class="text-link">Přečíst zásady cookies</a>
         <button class="btn btn-dark" value="default" data-cookie-accept>Uložit a zavřít</button>
       </div>
     </form>
@@ -363,7 +368,3 @@ document.querySelectorAll("[data-cookie-settings]").forEach((button) => {
   });
 });
 
-// Mark in-page navigation correctly when arriving with a hash.
-if (currentPath === "/" && window.location.hash === "#cenik") {
-  document.querySelector('.desktop-nav a[href="/#cenik"]')?.classList.add("is-current");
-}

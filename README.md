@@ -4,14 +4,13 @@ Prémiový vícestránkový web pražského ateliéru krátkého videa. Z produk
 
 ## Co web obsahuje
 
-- responzivní domovskou stránku s portfoliem, procesem, ceníkem, FAQ a CTA,
-- samostatné stránky **Služby**, **Portfolio**, **O studiu** a **Kontakt**,
-- funkční mobilní navigaci, filtry portfolia, přístupný akordeon a dialog soukromí,
-- právní sekci: ochrana osobních údajů, cookies, obchodní podmínky a přístupnost,
-- lokálně hostované variabilní fonty (žádný požadavek na Google Fonts),
-- optimalizované responzivní WebP fotografie a malé ikony aplikace,
-- metadata pro sdílení, JSON-LD, manifest, robots.txt a vlastní stránku 404,
-- podporu `prefers-reduced-motion`, klávesnice, zvětšení textu a tisk právních dokumentů.
+- 11 stránek: domů, **Služby**, **Portfolio**, **O studiu**, **Ceník** (nově samostatná stránka se srovnávací tabulkou a doplňky), **Kontakt** a právní sekci,
+- statický header a footer ve všech stránkách (vkládá se už při buildu — čitelné bez JavaScriptu, indexovatelné vyhledávači),
+- právní sekci: ochrana osobních údajů (GDPR), cookies + cookie lišta s nastavením, obchodní podmínky, přístupnost a identifikace provozovatele v patičce,
+- samostatně hostované variabilní fonty (`src/fonts/`) — **žádná závislost na npm fontových balíčcích, build nemůže selhat na chybějícím importu**,
+- plynulé přechody mezi stránkami (View Transitions) a prefetch odkazů (Speculation Rules) s respektem k `prefers-reduced-motion`,
+- responzivní fluidní typografii (`clamp()`), autoprefixer pro širší podporu prohlížečů, vlastní 404 stránku funkční na jakékoli adrese,
+- optimalizované responzivní WebP fotografie, metadata pro sdílení, JSON-LD, `sitemap.xml`, `robots.txt` a manifest.
 
 ## Spuštění
 
@@ -20,16 +19,40 @@ npm install
 npm run dev
 ```
 
+> **Pozor:** po každém stažení nové verze z Gitu nejdřív spusťte `npm install`.
+> Stará `node_modules` bez nových závislostí byla příčinou dřívější chyby
+> `Rollup failed to resolve import "@fontsource-variable/..."` — tato závislost
+> už je zcela odstraněná, ale `vite` samotný vždy `npm install` potřebuje.
+
 Vývojový server poběží na `http://localhost:5173`.
 
-Produkční sestavení:
+Produkční sestavení a místní náhled:
 
 ```bash
 npm run build
 npm run preview
 ```
 
-Vite sestaví všech deset HTML vstupů definovaných ve `vite.config.js`.
+Vite sestaví všech 11 HTML vstupů definovaných ve `vite.config.js`.
+
+## Nasazení na web (GitHub Pages)
+
+Repozitář obsahuje připravený deploy workflow `Documentation/deploy/github-pages.yml`. Kvůli oprávněním GitHub App ho sandbox nemůže nahrát přímo do `.github/workflows/`, proto je potřeba jednorázově přesunout:
+
+```bash
+mkdir -p .github/workflows
+mv Documentation/deploy/github-pages.yml .github/workflows/deploy.yml
+git add -A && git commit -m "Deploy workflow na GitHub Pages" && git push
+```
+
+Potom:
+
+1. po sloučení do `main` se workflow automaticky spustí — build a nasazení,
+2. web poběží na `https://kristynka009.github.io/Kriessha/`,
+3. workflow se sám pokusí zapnout Pages se zdrojem **GitHub Actions**; pokud ne, zapněte ručně v **Settings → Pages → Source: GitHub Actions**,
+4. všechna URL jsou relativní, takže web funguje i na vlastní doméně — stačí změnit `base` a canonical URL.
+
+„Stará verze" se už nezobrazí: všechny assety mají v názvu hash buildu a GitHub Pages cachuje maximálně 10 minut.
 
 ## Struktura
 
@@ -37,15 +60,21 @@ Vite sestaví všech deset HTML vstupů definovaných ve `vite.config.js`.
 index.html                    Domovská stránka
 sluzby.html                   Detail služeb a srovnání balíčků
 portfolio.html                Filtrovatelné portfolio
+cenik.html                    Balíčky, srovnávací tabulka, doplňky, FAQ
 kontakt.html                  Poptávkový formulář
 o-nas.html                    Studio, hodnoty a přístup k AI
 ochrana-soukromi.html         Informace podle GDPR
 cookies.html                  Přehled lokálního úložiště
 obchodni-podminky.html        Podmínky kreativních služeb
 pristupnost.html              Prohlášení o přístupnosti
-404.html                      Chybová stránka
-src/main.js                   Sdílený header/footer a interakce
+404.html                      Samostatná chybová stránka (bez externích závislostí)
+src/main.js                   Interakce, cookie lišta, fallback chrome
 src/styles.css                Design systém a všechny layouty
+src/fonts.css                 @font-face pro samostatně hostované fonty
+src/fonts/                    WOFF2 podsady latin + latin-ext (OFL)
+src/partials/header.html      Statický header (vkládá build)
+src/partials/footer.html      Statický footer (vkládá build)
+Documentation/deploy/github-pages.yml  Deploy workflow (přesune se do .github/workflows)
 Documentation/Brand           Závazná barevná paleta
 ```
 
@@ -57,7 +86,7 @@ Web záměrně nevymýšlí firemní ani kontaktní údaje, které v zadání ne
 2. napojit formulář na zabezpečený endpoint, přidat serverovou validaci, ochranu proti spamu a potvrzovací e-mail;
 3. upravit zásady soukromí podle reálného hostingu, e-mailu, cloudového úložiště a formulářového dodavatele;
 4. nechat obchodní podmínky zkontrolovat podle skutečného smluvního a daňového modelu;
-5. po určení finální domény doplnit canonical URL, `og:url` a absolutní `sitemap.xml` do `robots.txt`;
+5. po přechodu na vlastní doménu aktualizovat canonical URL, `og:url` a absolutní adresy v `sitemap.xml` a `robots.txt` (vše na jednom místě — `scripts/normalize-pages.py` a `public/sitemap.xml`);
 6. pokud se přidá analytika, Meta Pixel, mapa, chat nebo vložené video, rozšířit consent režim i právní dokumentaci **před jejich načtením**;
 7. provést závěrečný audit formuláře a přístupnosti v produkčním hostingu.
 
@@ -65,12 +94,10 @@ Aktuální prezentační formulář data nikam neodesílá a po validaci tuto sk
 
 ## Kontrola kvality
 
-Použité kontroly:
-
 ```bash
 npm run build
 npx html-validate '*.html'
 git diff --check
 ```
 
-HTML stránky procházejí validací `html-validate`; produkční build má sdílený JS bundle přibližně 4 kB gzip a CSS přibližně 10 kB gzip (bez fontů a fotografií).
+HTML stránky procházejí validací `html-validate`; produkční build má sdílený JS bundle přibližně 4,5 kB gzip a CSS přibližně 11,5 kB gzip (bez fontů a fotografií). Odkazy a assety všech stránek procházejí automatickým crawl testem (vše HTTP 200).
