@@ -14,249 +14,366 @@
       content="Krátká videa na Instagram a Facebook. Bez kamery, bez štábu."
     />
     <meta property="og:image" content="/images/og-share.jpg" />
+    <meta property="og:locale" content="cs_CZ" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#FFF9E2" />
     <link rel="icon" type="image/png" href="/images/favicon-source.png" />
+    <link rel="apple-touch-icon" href="/images/favicon-source.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,560;12..96,700&family=Outfit:wght@380;460;560&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,560;1,6..72,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,520;12..96,680;12..96,800&family=Outfit:wght@320;420;520;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,550&display=swap"
       rel="stylesheet"
     />
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="preloader" data-preloader>
+      <div class="preloader-mark">
+        <img src="/images/favicon-source.png" alt="" width="28" height="28" />
+        <span>Kriessha</span>
+      </div>
+      <p>Ateliér krátkého videa</p>
+    </div>
+
     <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
 
     <header class="site-header" data-header>
+      <div class="progress" data-progress></div>
       <div class="shell header-inner">
         <a class="wordmark" href="#top" aria-label="Kriessha, nahoru">
-          <img src="/images/favicon-source.png" alt="" width="36" height="36" />
+          <img src="/images/favicon-source.png" alt="" width="34" height="34" />
           <span>Kriessha</span>
         </a>
-        <nav class="nav" data-nav aria-label="Hlavní">
-          <a href="#jak">Jak to funguje</a>
-          <a href="#balicky">Balíčky</a>
+
+        <nav class="nav" data-nav id="menu" aria-label="Hlavní">
+          <a href="#atelier">Ateliér</a>
+          <a href="#jak">Metoda</a>
+          <a href="#prace">Práce</a>
+          <a href="#nabidka">Nabídka</a>
           <a href="#otazky">Otázky</a>
           <a class="btn btn-nav" href="#kontakt">Napsat nám</a>
         </nav>
-        <button
-          class="nav-toggle"
-          type="button"
-          data-nav-toggle
-          aria-expanded="false"
-          aria-controls="menu"
-        >
-          <span class="sr-only">Menu</span>
-          <span></span>
-          <span></span>
-        </button>
+
+        <div class="header-aside">
+          <span class="demo-pill">Ukázka</span>
+          <button
+            class="nav-toggle"
+            type="button"
+            data-nav-toggle
+            aria-expanded="false"
+            aria-controls="menu"
+          >
+            <span class="sr-only">Menu</span>
+            <i></i>
+            <i></i>
+          </button>
+        </div>
       </div>
     </header>
 
     <main id="obsah">
       <section class="hero" id="top">
         <div class="shell hero-grid">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">Reklamní videa z fotek</p>
-            <h1>Z vašich fotek uděláme reklamu.</h1>
-            <p class="lead">
+          <div class="hero-copy">
+            <p class="eyebrow reveal" data-delay="1">Praha · ateliér krátkého videa</p>
+            <h1 class="display reveal" data-delay="2">
+              Z vašich fotek
+              <em>uděláme reklamu.</em>
+            </h1>
+            <p class="lead reveal" data-delay="3">
               Krátká videa, která můžete hned pustit na Instagramu a Facebooku.
-              Bez kamery, bez štábu, bez čekání na termín natáčení.
+              Bez kamery. Bez štábu. Bez čekání na termín natáčení.
             </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#kontakt">Chci první videa</a>
-              <a class="btn btn-ghost" href="#jak">Jak to funguje</a>
+            <div class="hero-actions reveal" data-delay="4">
+              <a class="btn btn-primary" href="#kontakt">
+                <span>Chci první videa</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a class="btn btn-ghost" href="#atelier">Jak to vypadá</a>
             </div>
-            <p class="trust">
-              Formát 9:16 · dodání do 5 dnů · připravené do reklam
-            </p>
+            <div class="trust reveal" data-delay="5">
+              <div class="stars" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <p>
+                <strong>Připravené do reklam</strong>
+                Formát 9:16 · české titulky · dodání do 5 dnů
+              </p>
+            </div>
           </div>
-          <figure class="hero-visual reveal">
-            <img
-              src="/images/hero-portrait.jpg"
-              alt="Žena ukazuje na telefonu krátké produktové video"
-              width="1600"
-              height="1066"
-            />
+
+          <figure class="hero-visual reveal" data-delay="3">
+            <div class="hero-frame" data-parallax>
+              <img
+                src="/images/hero-portrait.jpg"
+                alt="Žena ukazuje na telefonu krátké produktové video"
+                width="1600"
+                height="2000"
+              />
+            </div>
+            <aside class="hero-float">
+              <img src="/images/reel-beauty.jpg" alt="" />
+              <p>
+                <span>Reels · 9:16</span>
+                Z fotky produktu. 11 sekund.
+              </p>
+            </aside>
           </figure>
         </div>
       </section>
 
-      <section class="stats" aria-label="Co dostanete">
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Instagram</span><i></i>
+          <span>Facebook</span><i></i>
+          <span>Reels</span><i></i>
+          <span>Stories</span><i></i>
+          <span>9:16</span><i></i>
+          <span>České titulky</span><i></i>
+          <span>Ads Manager</span><i></i>
+          <span>Instagram</span><i></i>
+          <span>Facebook</span><i></i>
+          <span>Reels</span><i></i>
+          <span>Stories</span><i></i>
+          <span>9:16</span><i></i>
+          <span>České titulky</span><i></i>
+          <span>Ads Manager</span><i></i>
+        </div>
+      </div>
+
+      <section class="stats" aria-label="Rozsah práce">
         <div class="shell stats-row">
-          <div>
-            <strong>6–15 s</strong>
-            <span>přesně tak dlouhé, aby je někdo dokoukal</span>
-          </div>
-          <div>
-            <strong>3 varianty</strong>
-            <span>různý hook, stejný produkt — na test v reklamách</span>
-          </div>
-          <div>
+          <article>
+            <strong data-count="15" data-prefix="" data-suffix=" s">6–15 s</strong>
+            <span>tak krátké, aby je někdo dokoukal v reklamě</span>
+          </article>
+          <article>
+            <strong>3×</strong>
+            <span>varianty stejného produktu, jiný hook</span>
+          </article>
+          <article>
             <strong>5 dní</strong>
-            <span>od fotek k souborům, které jdou rovnou nahrát</span>
-          </div>
-          <div>
-            <strong>IG + FB</strong>
-            <span>Reels, Stories, feed. Na výšku, s českými titulky</span>
-          </div>
+            <span>od fotek k souborům, které jdou nahrát</span>
+          </article>
         </div>
       </section>
 
-      <section class="platform" id="platforma">
+      <section class="atelier" id="atelier">
         <div class="shell">
-          <div class="section-head reveal">
-            <p class="eyebrow">Co z fotek vznikne</p>
-            <h2>Jedna sada fotek. Videa, která můžete hned pustit.</h2>
-            <p class="section-lead">
-              Pošlete nám to, co už máte — produkt, výlohu, e-shop.
-              Vrátíme vám krátká videa s pohybem, světlem a textem od první vteřiny.
+          <div class="section-head">
+            <p class="eyebrow reveal">Ateliér</p>
+            <h2 class="display reveal">
+              Jedna sada fotek.
+              <em>Video, které můžete hned pustit.</em>
+            </h2>
+            <p class="section-lead reveal">
+              Pošlete produkt, výlohu, e-shop. Vrátíme vám pohyb, světlo
+              a text od první vteřiny — připravené do profilu i do reklamního účtu.
             </p>
           </div>
-          <figure class="platform-frame reveal">
-            <img
-              src="/images/photos-to-video.jpg"
-              alt="Rozložené produktové fotky a uprostřed telefon s hotovým videem"
-              width="1600"
-              height="1066"
-            />
-          </figure>
-        </div>
-      </section>
 
-      <section class="split" id="jak">
-        <div class="shell split-grid">
-          <div class="split-copy reveal">
-            <p class="eyebrow">Tři kroky</p>
-            <h2>Žádné natáčení. Jen fotky a krátký brief.</h2>
-            <ol class="steps">
-              <li>
-                <span>01</span>
-                <div>
-                  <h3>Pošlete fotky</h3>
-                  <p>
-                    Produkt, provozovna, obal. Čím ostřejší, tím lepší video.
-                    Stačí to, co už visí na webu nebo v telefonu.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <span>02</span>
-                <div>
-                  <h3>Sestavíme hook</h3>
-                  <p>
-                    První vteřina, české titulky, dvě až tři textové varianty.
-                    Nic, co by vypadalo jako hodinový brand film.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <span>03</span>
-                <div>
-                  <h3>Dostanete soubory</h3>
-                  <p>
-                    Vertikální videa připravená do Ads Manageru a do profilu.
-                    Můžete je spustit hned.
-                  </p>
-                </div>
-              </li>
-            </ol>
+          <div class="stage reveal">
+            <button class="stage-play" type="button" data-stage-toggle aria-pressed="false">
+              <span class="play-orb">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                  <path d="M8 6.5v11l9-5.5-9-5.5Z" fill="currentColor" />
+                </svg>
+              </span>
+              <span data-stage-label>Přehrát ukázku</span>
+            </button>
+            <div class="stage-media" data-stage>
+              <img class="is-on" src="/images/photos-to-video.jpg" alt="Fotky produktu a hotové video v telefonu" />
+              <img src="/images/still-hands.jpg" alt="Skládání fotek před převodem do videa" />
+              <img src="/images/phone-reel.jpg" alt="Telefon s produktovým Reels" />
+              <img src="/images/local-boutique.jpg" alt="Natáčení produktu v pražském butiku" />
+            </div>
+            <div class="stage-caption">
+              <p>Z ateliéru</p>
+              <p>Fotka → pohyb → soubor do reklam</p>
+            </div>
           </div>
-          <figure class="split-visual reveal">
-            <img
-              src="/images/phone-reel.jpg"
-              alt="Telefon s produktovým Reels mezi fotkami a eukalyptem"
-              width="1080"
-              height="1620"
-            />
-          </figure>
         </div>
       </section>
 
-      <section class="use">
+      <section class="method" id="jak">
+        <div class="shell method-grid">
+          <div>
+            <p class="eyebrow reveal">Metoda</p>
+            <h2 class="display reveal">Žádné natáčení. Jen fotky a krátký brief.</h2>
+            <p class="section-lead reveal">
+              Tři kroky. Žádný onboarding na měsíc. Žádný štáb v provozovně.
+            </p>
+          </div>
+          <ol class="steps">
+            <li class="reveal">
+              <span>01</span>
+              <div>
+                <h3>Pošlete fotky</h3>
+                <p>
+                  Produkt, provozovna, obal. Čím ostřejší, tím čistší video.
+                  Stačí to, co už visí na webu nebo v galerii telefonu.
+                </p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span>02</span>
+              <div>
+                <h3>Sestavíme první vteřinu</h3>
+                <p>
+                  Hook, české titulky, dvě až tři textové varianty.
+                  Nic, co by vypadalo jako hodinový brand film.
+                </p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span>03</span>
+              <div>
+                <h3>Dostanete soubory</h3>
+                <p>
+                  Vertikální videa do Ads Manageru i do profilu.
+                  Můžete je spustit hned ten den.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="work" id="prace">
         <div class="shell">
-          <div class="section-head reveal">
-            <p class="eyebrow">Pro koho</p>
-            <h2>Pro firmy, které už fotky mají a video jim chybí.</h2>
+          <div class="section-head section-head-row">
+            <div>
+              <p class="eyebrow reveal">Vybraná práce</p>
+              <h2 class="display reveal">Tichý luxus na 9:16.</h2>
+            </div>
+            <p class="section-lead reveal">
+              Ukázky nálady ateliéru. Až budeme točit vaše fotky,
+              produkt zůstane váš — jen se začne hýbat.
+            </p>
           </div>
-          <div class="use-grid">
-            <article class="use-card reveal">
-              <h3>E-shop a produkt</h3>
-              <p>
-                Krém, káva, šperk, oblečení. Z katalogových fotek uděláme
-                krátké spoty, které vydrží v reklamním účtu týdny, ne jednu sezónu filmu.
-              </p>
-            </article>
-            <article class="use-card reveal">
-              <h3>Lokální provozovna</h3>
-              <p>
-                Salón, kavárna, obchod, studio. Ukážeme místo tak, aby to někdo
-                chtěl otevřít — ne jako televizní znělku.
-              </p>
-            </article>
-            <article class="use-card reveal">
-              <h3>Služba, která inzeruje</h3>
-              <p>
-                Reality, auto, fitness, kurzy. Když už pouštíte Facebook nebo
-                Instagram ads, video z fotek je nejlevnější způsob, jak je osvěžit.
-              </p>
-            </article>
-          </div>
-          <figure class="use-visual reveal">
+        </div>
+        <div class="filmstrip">
+          <figure class="reel reveal">
+            <img src="/images/reel-beauty.jpg" alt="Sérum v jantarové lahvičce, záběr pro Reels" />
+            <figcaption>
+              <span>01 · Péče</span>
+              Sérum, 10 s
+            </figcaption>
+          </figure>
+          <figure class="reel reveal">
+            <img src="/images/phone-reel.jpg" alt="Káva jako krátké produktové video" />
+            <figcaption>
+              <span>02 · Gastro</span>
+              Šálek, 12 s
+            </figcaption>
+          </figure>
+          <figure class="reel reveal">
+            <img src="/images/reel-fashion.jpg" alt="Lněné sako jako módní záběr" />
+            <figcaption>
+              <span>03 · Móda</span>
+              Lněné sako, 9 s
+            </figcaption>
+          </figure>
+          <figure class="reel reveal">
+            <img src="/images/reel-table.jpg" alt="Dezért a med, záběr pro lokální provozovnu" />
+            <figcaption>
+              <span>04 · Lokál</span>
+              Stůl, 11 s
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="who">
+        <div class="shell who-grid">
+          <figure class="who-visual reveal">
             <img
               src="/images/local-boutique.jpg"
               alt="Pražský butik, produkt na stole a telefon na stativu"
-              width="1600"
-              height="1066"
             />
           </figure>
+          <div>
+            <p class="eyebrow reveal">Pro koho</p>
+            <h2 class="display reveal">Pro značky, které už fotky mají a video jim chybí.</h2>
+            <ul class="who-list">
+              <li class="reveal">
+                <h3>E-shop a produkt</h3>
+                <p>Krém, káva, šperk, oblečení. Katalogové fotky, které vydrží v účtu týdny.</p>
+              </li>
+              <li class="reveal">
+                <h3>Provozovna</h3>
+                <p>Salón, kavárna, obchod. Místo, které chce někdo otevřít — ne televizní znělka.</p>
+              </li>
+              <li class="reveal">
+                <h3>Služba v reklamách</h3>
+                <p>Reality, auto, fitness. Když už inzerujete, video je nejrychlejší obměna.</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section class="packages" id="balicky">
+      <section class="offer" id="nabidka">
         <div class="shell">
-          <div class="section-head reveal">
-            <p class="eyebrow">Balíčky</p>
-            <h2>Jasná cena. Žádné „uvidíme po schůzce“.</h2>
-            <p class="section-lead">
-              Orientační nástřel pro začátek. Ceny jsou bez DPH — zatím nejsme plátci.
-            </p>
+          <div class="section-head">
+            <p class="eyebrow reveal">Nabídka</p>
+            <h2 class="display reveal">Jasná cena. Žádné „uvidíme po schůzce“.</h2>
           </div>
-          <div class="price-grid">
-            <article class="price-card reveal">
-              <p class="price-name">Start</p>
-              <p class="price-sum">4&nbsp;900&nbsp;Kč</p>
+          <div class="menu">
+            <article class="menu-item reveal">
+              <div class="menu-top">
+                <h3>Start</h3>
+                <p class="sum">4 900 Kč</p>
+              </div>
+              <p>První sada, ať vidíte ruku ateliéru.</p>
               <ul>
                 <li>3 vertikální videa</li>
                 <li>8–12 sekund</li>
                 <li>1 kolo úprav</li>
                 <li>Soubory do reklam i do profilu</li>
               </ul>
-              <a class="btn btn-ghost" href="#kontakt">Chci Start</a>
+              <a class="text-link" href="#kontakt">Vybrat Start</a>
             </article>
-            <article class="price-card price-card-featured reveal">
-              <p class="price-tag">Nejčastěji</p>
-              <p class="price-name">Studio</p>
-              <p class="price-sum">8&nbsp;900&nbsp;Kč</p>
+            <article class="menu-item is-featured reveal">
+              <p class="ribbon">Nejčastěji</p>
+              <div class="menu-top">
+                <h3>Studio</h3>
+                <p class="sum">8 900 Kč</p>
+              </div>
+              <p>Dostatek variant na první test v účtu.</p>
               <ul>
                 <li>6 videí, 2 textové varianty</li>
                 <li>Popisky k příspěvkům</li>
                 <li>2 kolá úprav</li>
                 <li>Dodání do 5 dnů</li>
               </ul>
-              <a class="btn btn-primary" href="#kontakt">Chci Studio</a>
+              <a class="btn btn-primary" href="#kontakt">Vybrat Studio</a>
             </article>
-            <article class="price-card reveal">
-              <p class="price-name">Péče</p>
-              <p class="price-sum">14&nbsp;900&nbsp;Kč<span>/měsíc</span></p>
+            <article class="menu-item reveal">
+              <div class="menu-top">
+                <h3>Péče</h3>
+                <p class="sum">14 900 Kč<span> / měsíc</span></p>
+              </div>
+              <p>Pravidelná obměna, než se reklama unaví.</p>
               <ul>
                 <li>8 videí měsíčně</li>
-                <li>Obměna hooků podle toho, co běží</li>
+                <li>Nové hooky podle toho, co běží</li>
                 <li>Krátká zpráva, co spustit</li>
                 <li>Přednostní termín</li>
               </ul>
-              <a class="btn btn-ghost" href="#kontakt">Chci Péči</a>
+              <a class="text-link" href="#kontakt">Vybrat Péči</a>
             </article>
           </div>
         </div>
@@ -264,95 +381,67 @@
 
       <section class="faq" id="otazky">
         <div class="shell faq-wrap">
-          <div class="section-head reveal">
-            <p class="eyebrow">Otázky</p>
-            <h2>Máte otázky? Máme přímé odpovědi.</h2>
-          </div>
+          <p class="eyebrow reveal">Otázky</p>
+          <h2 class="display reveal">Máte otázky? Máme odpovědi.</h2>
           <div class="faq-list">
             <details class="faq-item reveal" open>
-              <summary>
-                <span>01</span>
-                Potřebujeme kameru, herce nebo studio?
-              </summary>
+              <summary><span>01</span> Potřebujeme kameru, herce nebo studio?</summary>
               <p>
-                Ne. Stačí fotky, které už máte. My z nich složíme krátká videa.
-                Když budete chtít i klasické UGC — někdo do kamery s produktem —
-                můžeme to natočit telefonem zvlášť. Není to ale podmínka.
+                Ne. Stačí fotky, které už máte. Když budete chtít i klasické UGC —
+                někdo do kamery s produktem — natočíme to telefonem zvlášť. Není to podmínka.
               </p>
             </details>
             <details class="faq-item reveal">
-              <summary>
-                <span>02</span>
-                Jaké fotky poslat, aby to vypadalo dobře?
-              </summary>
+              <summary><span>02</span> Jaké fotky poslat, aby to vypadalo dobře?</summary>
               <p>
-                Ostře, od oka výš, ideálně více úhlů. Bílé e-shopové pozadí jde
-                použít, životní záběr je ještě lepší. Logo a etiketa ať jsou čitelné —
-                u těch AI nejvíc chybuje, proto je hlídáme ručně.
+                Ostře, ideálně víc úhlů. Bílé e-shopové pozadí jde použít, životní záběr
+                je ještě lepší. Logo a etiketa ať jsou čitelné — u těch hlídáme každý snímek.
               </p>
             </details>
             <details class="faq-item reveal">
-              <summary>
-                <span>03</span>
-                Bude video označené, že ho dělala AI?
-              </summary>
+              <summary><span>03</span> Bude video označené, že ho dělala AI?</summary>
               <p>
-                Ano. Od srpna 2026 to u realistického reklamního obsahu v EU patří
-                k pravidlům. Označení dáme tak, aby nepřekáželo, ale bylo poctivé.
-                Neslibujeme, že video je záznam z prodejny, když není.
+                Ano. U realistického reklamního obsahu v EU to od srpna 2026 patří k pravidlům.
+                Označení dáme tak, aby nepřekáželo. Neslibujeme záznam z prodejny, když jím není.
               </p>
             </details>
             <details class="faq-item reveal">
-              <summary>
-                <span>04</span>
-                Hodí se to i malé firmě z okolí, nejen e-shopu?
-              </summary>
+              <summary><span>04</span> Hodí se to i malé firmě z okolí?</summary>
               <p>
                 Právě pro ni. Když už dáváte peníze do Instagramu nebo Facebooku
-                a nemáte nové video každý týden, tohle je nejrychlejší cesta,
-                jak účet oživit bez natáčecího dne.
+                a nemáte nové video každý týden, tohle je nejrychlejší cesta bez natáčecího dne.
               </p>
             </details>
             <details class="faq-item reveal">
-              <summary>
-                <span>05</span>
-                Umíte i nasadit reklamu, nebo jen video?
-              </summary>
+              <summary><span>05</span> Umíte i nasadit reklamu, nebo jen video?</summary>
               <p>
-                Základ je video. Nasazení do účtu a hlídání výsledků umíme
-                domluvit u balíčku Péče. Když máte vlastní správce reklam, předáme
-                soubory tak, aby je jen nahrál.
+                Základ je video. Nasazení do účtu patří k Péči. Máte-li vlastního správce,
+                předáme soubory tak, aby je jen nahrál.
               </p>
             </details>
             <details class="faq-item reveal">
-              <summary>
-                <span>06</span>
-                Kde jste a jak to probíhá?
-              </summary>
+              <summary><span>06</span> Kde jste a jak to probíhá?</summary>
               <p>
-                Jsme z Prahy, pracujeme na dálku i osobně. Ozvete se, pošlete
-                fotky, odsouhlasíme směr a do pěti dnů máte první sadu.
-                Žádný dlouhý onboarding.
+                Praha, na dálku i osobně. Ozvete se, pošlete fotky, odsouhlasíme směr
+                a do pěti dnů máte první sadu.
               </p>
             </details>
           </div>
         </div>
       </section>
 
-      <section class="contact" id="kontakt">
-        <div class="shell contact-grid">
-          <div class="contact-copy reveal">
-            <p class="eyebrow">Nástřel poptávky</p>
-            <h2>Pošlete fotky. Ozveme se s termínem.</h2>
-            <p class="section-lead">
-              Napište, kdo jste a co prodáváte. Když máte odkaz na e-shop nebo
-              Instagram, vložte ho. Čím konkrétnější zpráva, tím rychlejší odhad.
+      <section class="finale" id="kontakt">
+        <div class="finale-media" aria-hidden="true">
+          <img src="/images/cta-portrait.jpg" alt="" />
+        </div>
+        <div class="shell finale-grid">
+          <div class="finale-copy">
+            <p class="eyebrow reveal">Začneme</p>
+            <h2 class="display reveal">Pošlete fotky. Ozveme se s termínem.</h2>
+            <p class="section-lead reveal">
+              Napište, kdo jste a co prodáváte. Odkaz na e-shop nebo Instagram
+              urychlí odhad. Odpovídáme do dvou pracovních dnů.
             </p>
-            <ul class="contact-points">
-              <li>Odpovídáme do dvou pracovních dnů</li>
-              <li>První ukázku můžeme udělat ze 3–5 fotek</li>
-              <li>Fakturujeme s IČO, česky, bez DPH</li>
-            </ul>
           </div>
           <form class="contact-form reveal" data-form novalidate>
             <label>
@@ -368,7 +457,7 @@
               <input type="email" name="email" autocomplete="email" required />
             </label>
             <label>
-              Odkaz na web nebo Instagram
+              Web nebo Instagram
               <input type="url" name="site" placeholder="https://" />
             </label>
             <label class="full">
@@ -380,9 +469,11 @@
                 placeholder="Produkt, kolik fotek máte, kam to chcete pustit…"
               ></textarea>
             </label>
-            <button class="btn btn-primary full" type="submit">Odeslat poptávku</button>
+            <button class="btn btn-primary full" type="submit">
+              <span>Odeslat poptávku</span>
+            </button>
             <p class="form-note" data-form-note>
-              Zatím nástřel webu — zprávu uvidíme, až napojíme schránku.
+              Soukromá ukázka ateliéru. Schránku napojíme, až půjdeme naostro.
             </p>
           </form>
         </div>
@@ -390,27 +481,35 @@
     </main>
 
     <footer class="site-footer">
-      <div class="shell footer-inner">
+      <div class="shell footer-top">
         <div>
-          <p class="wordmark footer-mark">
+          <a class="wordmark" href="#top">
             <img src="/images/favicon-source.png" alt="" width="32" height="32" />
             Kriessha
-          </p>
-          <p>Z fotek krátká videa na Instagram a Facebook.</p>
+          </a>
+          <p class="footer-tag">Z fotek krátká videa na Instagram a Facebook.</p>
         </div>
         <div>
+          <p class="footer-label">Ateliér</p>
           <p>Praha</p>
-          <p>Česky, osobně, bez agenturního balastu.</p>
+          <p>Česky · osobně</p>
         </div>
         <div>
-          <a href="#jak">Jak to funguje</a>
-          <a href="#balicky">Balíčky</a>
+          <p class="footer-label">Mapa</p>
+          <a href="#atelier">Ateliér</a>
+          <a href="#jak">Metoda</a>
+          <a href="#prace">Práce</a>
+          <a href="#nabidka">Nabídka</a>
+        </div>
+        <div>
+          <p class="footer-label">Kontakt</p>
+          <a href="#kontakt">Napsat nám</a>
           <a href="#otazky">Otázky</a>
         </div>
       </div>
       <div class="shell footer-base">
         <span>© <span data-year></span> Kriessha</span>
-        <span>Nástřel webu · barvy z brand palety</span>
+        <span>Soukromá ukázka · barvy z brand palety</span>
       </div>
     </footer>
   </body>
