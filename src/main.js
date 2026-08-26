@@ -1,6 +1,6 @@
-import "@fontsource-variable/bricolage-grotesque/wght.css";
-import "@fontsource-variable/outfit/wght.css";
-import "@fontsource-variable/newsreader/wght.css";
+import "@fontsource-variable/bricolage-grotesque";
+import "@fontsource-variable/outfit";
+import "@fontsource-variable/newsreader";
 import "@fontsource-variable/newsreader/wght-italic.css";
 import "./styles.css";
 
