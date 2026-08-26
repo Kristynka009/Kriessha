@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Po nasazení na finální doménu doplňte absolutní URL sitemap.xml.

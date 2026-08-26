@@ -1,516 +1,264 @@
 <!DOCTYPE html>
 <html lang="cs">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kriessha — Z fotek uděláme reklamu</title>
-    <meta
-      name="description"
-      content="Z vašich fotek uděláme krátká videa, která můžete hned pustit jako reklamu na Instagramu a Facebooku."
-    />
-    <meta property="og:title" content="Kriessha — Z fotek uděláme reklamu" />
-    <meta
-      property="og:description"
-      content="Krátká videa na Instagram a Facebook. Bez kamery, bez štábu."
-    />
-    <meta property="og:image" content="/images/og-share.jpg" />
-    <meta property="og:locale" content="cs_CZ" />
-    <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#FFF9E2" />
-    <link rel="icon" type="image/png" href="/images/favicon-source.png" />
-    <link rel="apple-touch-icon" href="/images/favicon-source.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,520;12..96,680;12..96,800&family=Outfit:wght@320;420;520;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,550&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Kriessha — Krátká reklamní videa z vašich fotografií</title>
+    <meta name="description" content="Z vašich fotografií vytvoříme krátká vertikální videa pro Reels, Stories a Meta Ads. Bez natáčecího dne, s českými titulky a exportem připraveným k publikaci.">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="theme-color" content="#fff9e2">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kriessha — Z fotek děláme videa, která mají pohyb i pointu">
+    <meta property="og:description" content="Krátká reklamní videa pro Reels, Stories a Meta Ads. Bez kamery, bez štábu, připravená k publikaci.">
+    <meta property="og:image" content="/images/og-share.jpg">
+    <meta property="og:image:width" content="1672">
+    <meta property="og:image:height" content="941">
+    <link rel="icon" href="/favicon.png" sizes="64x64">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"ProfessionalService","name":"Kriessha","description":"Ateliér krátkého reklamního videa z fotografií.","areaServed":"CZ","address":{"@type":"PostalAddress","addressLocality":"Praha","addressCountry":"CZ"},"knowsAbout":["krátká videa","Reels","Stories","Meta Ads","motion design"]}
+    </script>
     <script type="module" src="/src/main.js"></script>
   </head>
-  <body>
-    <div class="grain" aria-hidden="true"></div>
+  <body data-page="home">
+    <a class="skip-link" href="#main-content">Přeskočit na obsah</a>
+    <div data-site-header></div>
 
-    <div class="preloader" data-preloader>
-      <div class="preloader-mark">
-        <img src="/images/favicon-source.png" alt="" width="28" height="28" />
-        <span>Kriessha</span>
-      </div>
-      <p>Ateliér krátkého videa</p>
-    </div>
-
-    <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
-
-    <header class="site-header" data-header>
-      <div class="progress" data-progress></div>
-      <div class="shell header-inner">
-        <a class="wordmark" href="#top" aria-label="Kriessha, nahoru">
-          <img src="/images/favicon-source.png" alt="" width="34" height="34" />
-          <span>Kriessha</span>
-        </a>
-
-        <nav class="nav" data-nav id="menu" aria-label="Hlavní">
-          <a href="#atelier">Ateliér</a>
-          <a href="#jak">Metoda</a>
-          <a href="#prace">Práce</a>
-          <a href="#nabidka">Nabídka</a>
-          <a href="#otazky">Otázky</a>
-          <a class="btn btn-nav" href="#kontakt">Napsat nám</a>
-        </nav>
-
-        <div class="header-aside">
-          <span class="demo-pill">Ukázka</span>
-          <button
-            class="nav-toggle"
-            type="button"
-            data-nav-toggle
-            aria-expanded="false"
-            aria-controls="menu"
-          >
-            <span class="sr-only">Menu</span>
-            <i></i>
-            <i></i>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <main id="obsah">
-      <section class="hero" id="top">
-        <div class="shell hero-grid">
+    <main id="main-content">
+      <section class="home-hero" id="top" aria-labelledby="hero-title">
+        <div class="shell hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow reveal" data-delay="1">Praha · ateliér krátkého videa</p>
-            <h1 class="display reveal" data-delay="2">
-              Z vašich fotek
-              <em>uděláme reklamu.</em>
+            <p class="eyebrow" data-reveal>Ateliér krátkého videa · Praha</p>
+            <h1 class="display-xl" id="hero-title" data-reveal data-reveal-delay="1">
+              Z fotek děláme videa, <em>která mají pointu.</em>
             </h1>
-            <p class="lead reveal" data-delay="3">
-              Krátká videa, která můžete hned pustit na Instagramu a Facebooku.
-              Bez kamery. Bez štábu. Bez čekání na termín natáčení.
+            <p class="text-lead" data-reveal data-reveal-delay="2">
+              Proměníme vaše produktové a lifestylové fotografie v krátká vertikální videa pro Reels, Stories a reklamy. Bez natáčecího dne. S citem pro značku a jasným cílem.
             </p>
-            <div class="hero-actions reveal" data-delay="4">
-              <a class="btn btn-primary" href="#kontakt">
-                <span>Chci první videa</span>
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-                  <path
-                    d="M5 12h14M13 6l6 6-6 6"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.7"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+            <div class="hero-actions" data-reveal data-reveal-delay="3">
+              <a class="btn btn-primary" href="/kontakt.html">Chci první videa
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
-              <a class="btn btn-ghost" href="#atelier">Jak to vypadá</a>
+              <a class="btn btn-outline" href="/portfolio.html">Prohlédnout tvorbu</a>
             </div>
-            <div class="trust reveal" data-delay="5">
-              <div class="stars" aria-hidden="true">
-                <span></span><span></span><span></span><span></span><span></span>
-              </div>
-              <p>
-                <strong>Připravené do reklam</strong>
-                Formát 9:16 · české titulky · dodání do 5 dnů
-              </p>
-            </div>
+            <ul class="hero-proof" data-reveal data-reveal-delay="4">
+              <li><strong>Formát 9:16</strong><span>Reels · Stories · Ads</span></li>
+              <li><strong>České titulky</strong><span>čitelné i bez zvuku</span></li>
+              <li><strong>Do 5 pracovních dnů</strong><span>u standardní sady</span></li>
+            </ul>
           </div>
 
-          <figure class="hero-visual reveal" data-delay="3">
-            <div class="hero-frame" data-parallax>
-              <img
-                src="/images/hero-portrait.jpg"
-                alt="Žena ukazuje na telefonu krátké produktové video"
-                width="1600"
-                height="2000"
-              />
+          <figure class="hero-visual" data-reveal="right" data-reveal-delay="2">
+            <div class="hero-main-image">
+              <img src="/images/optimized/hero-portrait-1400.webp" srcset="/images/optimized/hero-portrait-760.webp 760w, /images/optimized/hero-portrait-1400.webp 1400w" sizes="(max-width: 1024px) 90vw, 40vw" width="1400" height="933" alt="Tvůrkyně ukazuje krátké produktové video na telefonu" fetchpriority="high">
             </div>
-            <aside class="hero-float">
-              <img src="/images/reel-beauty.jpg" alt="" />
-              <p>
-                <span>Reels · 9:16</span>
-                Z fotky produktu. 11 sekund.
-              </p>
-            </aside>
+            <figure class="hero-reel-card">
+              <img src="/images/optimized/reel-beauty-560.webp" width="560" height="995" alt="Vertikální produktový záběr séra">
+              <figcaption><span>Beauty</span><span>09 s</span></figcaption>
+            </figure>
+            <div class="hero-badge" aria-hidden="true">Fotografie <span>→</span> pohyb</div>
           </figure>
         </div>
       </section>
 
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>Instagram</span><i></i>
-          <span>Facebook</span><i></i>
-          <span>Reels</span><i></i>
-          <span>Stories</span><i></i>
-          <span>9:16</span><i></i>
-          <span>České titulky</span><i></i>
-          <span>Ads Manager</span><i></i>
-          <span>Instagram</span><i></i>
-          <span>Facebook</span><i></i>
-          <span>Reels</span><i></i>
-          <span>Stories</span><i></i>
-          <span>9:16</span><i></i>
-          <span>České titulky</span><i></i>
-          <span>Ads Manager</span><i></i>
-        </div>
-      </div>
-
-      <section class="stats" aria-label="Rozsah práce">
-        <div class="shell stats-row">
-          <article>
-            <strong data-count="15" data-prefix="" data-suffix=" s">6–15 s</strong>
-            <span>tak krátké, aby je někdo dokoukal v reklamě</span>
-          </article>
-          <article>
-            <strong>3×</strong>
-            <span>varianty stejného produktu, jiný hook</span>
-          </article>
-          <article>
-            <strong>5 dní</strong>
-            <span>od fotek k souborům, které jdou nahrát</span>
-          </article>
+      <section class="capability-strip" aria-label="Výstupy studia">
+        <div class="capability-track">
+          <span>Instagram Reels</span><span>Facebook Ads</span><span>Stories 9:16</span><span>České titulky</span><span>Motion design</span><span>Varianty hooků</span><span>Meta ready</span>
+          <span>Instagram Reels</span><span>Facebook Ads</span><span>Stories 9:16</span><span>České titulky</span><span>Motion design</span><span>Varianty hooků</span><span>Meta ready</span>
         </div>
       </section>
 
-      <section class="atelier" id="atelier">
+      <section class="section intro-statement" aria-labelledby="intro-title">
+        <div class="shell intro-grid">
+          <p class="eyebrow" data-reveal>Proč Kriessha</p>
+          <div>
+            <h2 class="display-md" id="intro-title" data-reveal>
+              Ve feedu rozhodují první dvě sekundy. <span class="serif-accent">My je nenecháváme náhodě.</span>
+            </h2>
+            <div class="intro-copy" data-reveal>
+              <p>Neanimujeme fotku jen proto, aby se hýbala. Každé video stavíme kolem jednoho sdělení, jednoho vizuálního momentu a jednoho důvodu pokračovat ve sledování.</p>
+              <p>Výsledek respektuje barvy, typografii i charakter značky. Nevypadá jako šablona a nepředstírá velkou filmovou produkci. Je čistý, uvěřitelný a připravený k použití.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark" aria-labelledby="showcase-title">
+        <div class="shell showcase-shell">
+          <div class="showcase-copy">
+            <p class="eyebrow" data-reveal>Od podkladu k výstupu</p>
+            <h2 class="display-md" id="showcase-title" data-reveal>Jedna sada fotek. <em>Tři různé nálady.</em></h2>
+            <p class="text-lead" data-reveal>Vyberte oblast a podívejte se, jak zůstává produkt hlavní postavou, i když kolem něj vznikne nový pohyb.</p>
+            <div class="showcase-tabs" role="tablist" aria-label="Oblasti ukázek" data-reveal>
+              <button class="showcase-tab is-active" type="button" role="tab" aria-selected="true" data-showcase-tab><span>01</span><span>Péče &amp; beauty</span><i></i></button>
+              <button class="showcase-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-showcase-tab><span>02</span><span>Gastro &amp; lokál</span><i></i></button>
+              <button class="showcase-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-showcase-tab><span>03</span><span>Móda &amp; detail</span><i></i></button>
+            </div>
+          </div>
+          <div class="showcase-stage" data-showcase data-reveal="right">
+            <figure class="showcase-frame is-active" data-showcase-frame role="tabpanel">
+              <img src="/images/optimized/photos-to-video-1400.webp" srcset="/images/optimized/photos-to-video-760.webp 760w, /images/optimized/photos-to-video-1400.webp 1400w" sizes="(max-width: 1024px) 94vw, 55vw" width="1400" height="933" loading="lazy" decoding="async" alt="Sada produktových fotografií a hotové video na telefonu">
+              <figcaption class="showcase-caption"><p>Sérum / produktový detail</p><p>Jemný pohyb, práce se světlem, benefit od první vteřiny.</p></figcaption>
+            </figure>
+            <figure class="showcase-frame" data-showcase-frame role="tabpanel">
+              <img src="/images/optimized/phone-reel-941.webp" width="941" height="1672" loading="lazy" decoding="async" alt="Káva a produktové video ve vertikálním formátu">
+              <figcaption class="showcase-caption"><p>Kavárna / atmosféra</p><p>Teplo, detail a rytmus pro lokální značku.</p></figcaption>
+            </figure>
+            <figure class="showcase-frame" data-showcase-frame role="tabpanel">
+              <img src="/images/optimized/reel-fashion-941.webp" width="941" height="1672" loading="lazy" decoding="async" alt="Lněné sako jako módní vertikální záběr">
+              <figcaption class="showcase-caption"><p>Len / materiál &amp; střih</p><p>Klidnější tempo, čistá typografie a prostor pro detail.</p></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-pistachio" aria-labelledby="services-title">
         <div class="shell">
           <div class="section-head">
-            <p class="eyebrow reveal">Ateliér</p>
-            <h2 class="display reveal">
-              Jedna sada fotek.
-              <em>Video, které můžete hned pustit.</em>
-            </h2>
-            <p class="section-lead reveal">
-              Pošlete produkt, výlohu, e-shop. Vrátíme vám pohyb, světlo
-              a text od první vteřiny — připravené do profilu i do reklamního účtu.
-            </p>
-          </div>
-
-          <div class="stage reveal">
-            <button class="stage-play" type="button" data-stage-toggle aria-pressed="false">
-              <span class="play-orb">
-                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-                  <path d="M8 6.5v11l9-5.5-9-5.5Z" fill="currentColor" />
-                </svg>
-              </span>
-              <span data-stage-label>Přehrát ukázku</span>
-            </button>
-            <div class="stage-media" data-stage>
-              <img class="is-on" src="/images/photos-to-video.jpg" alt="Fotky produktu a hotové video v telefonu" />
-              <img src="/images/still-hands.jpg" alt="Skládání fotek před převodem do videa" />
-              <img src="/images/phone-reel.jpg" alt="Telefon s produktovým Reels" />
-              <img src="/images/local-boutique.jpg" alt="Natáčení produktu v pražském butiku" />
-            </div>
-            <div class="stage-caption">
-              <p>Z ateliéru</p>
-              <p>Fotka → pohyb → soubor do reklam</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="method" id="jak">
-        <div class="shell method-grid">
-          <div>
-            <p class="eyebrow reveal">Metoda</p>
-            <h2 class="display reveal">Žádné natáčení. Jen fotky a krátký brief.</h2>
-            <p class="section-lead reveal">
-              Tři kroky. Žádný onboarding na měsíc. Žádný štáb v provozovně.
-            </p>
-          </div>
-          <ol class="steps">
-            <li class="reveal">
-              <span>01</span>
-              <div>
-                <h3>Pošlete fotky</h3>
-                <p>
-                  Produkt, provozovna, obal. Čím ostřejší, tím čistší video.
-                  Stačí to, co už visí na webu nebo v galerii telefonu.
-                </p>
-              </div>
-            </li>
-            <li class="reveal">
-              <span>02</span>
-              <div>
-                <h3>Sestavíme první vteřinu</h3>
-                <p>
-                  Hook, české titulky, dvě až tři textové varianty.
-                  Nic, co by vypadalo jako hodinový brand film.
-                </p>
-              </div>
-            </li>
-            <li class="reveal">
-              <span>03</span>
-              <div>
-                <h3>Dostanete soubory</h3>
-                <p>
-                  Vertikální videa do Ads Manageru i do profilu.
-                  Můžete je spustit hned ten den.
-                </p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="work" id="prace">
-        <div class="shell">
-          <div class="section-head section-head-row">
             <div>
-              <p class="eyebrow reveal">Vybraná práce</p>
-              <h2 class="display reveal">Tichý luxus na 9:16.</h2>
+              <p class="eyebrow" data-reveal>Služby</p>
+              <h2 class="display-md" id="services-title" data-reveal>Od prvního hooku <em>po finální export.</em></h2>
             </div>
-            <p class="section-lead reveal">
-              Ukázky nálady ateliéru. Až budeme točit vaše fotky,
-              produkt zůstane váš — jen se začne hýbat.
-            </p>
+            <p class="text-lead" data-reveal>Převezmeme kreativní koncept, text i technické provedení. Vy dodáte fotografie a kontext značky.</p>
           </div>
-        </div>
-        <div class="filmstrip">
-          <figure class="reel reveal">
-            <img src="/images/reel-beauty.jpg" alt="Sérum v jantarové lahvičce, záběr pro Reels" />
-            <figcaption>
-              <span>01 · Péče</span>
-              Sérum, 10 s
-            </figcaption>
-          </figure>
-          <figure class="reel reveal">
-            <img src="/images/phone-reel.jpg" alt="Káva jako krátké produktové video" />
-            <figcaption>
-              <span>02 · Gastro</span>
-              Šálek, 12 s
-            </figcaption>
-          </figure>
-          <figure class="reel reveal">
-            <img src="/images/reel-fashion.jpg" alt="Lněné sako jako módní záběr" />
-            <figcaption>
-              <span>03 · Móda</span>
-              Lněné sako, 9 s
-            </figcaption>
-          </figure>
-          <figure class="reel reveal">
-            <img src="/images/reel-table.jpg" alt="Dezért a med, záběr pro lokální provozovnu" />
-            <figcaption>
-              <span>04 · Lokál</span>
-              Stůl, 11 s
-            </figcaption>
-          </figure>
+          <div class="service-grid">
+            <article class="service-card" data-reveal>
+              <span class="service-number">01</span>
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="6" y="4" width="20" height="24" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m11 20 4-5 3 3 3-4 3 6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2" fill="currentColor"/></svg></div>
+              <h3>Photo to motion</h3>
+              <p>Promyšlený pohyb z vašich produktových a lifestylových fotografií. Žádné samoúčelné efekty.</p>
+              <a class="text-link" href="/sluzby.html#photo-motion">Zjistit více <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+            </article>
+            <article class="service-card" data-reveal data-reveal-delay="1">
+              <span class="service-number">02</span>
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 9h18M7 16h12M7 23h15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="24" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+              <h3>Hooky &amp; titulky</h3>
+              <p>Text od první sekundy, čitelné titulky a varianty úvodu, které můžete v reklamě skutečně porovnat.</p>
+              <a class="text-link" href="/sluzby.html#copy">Zjistit více <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+            </article>
+            <article class="service-card" data-reveal data-reveal-delay="2">
+              <span class="service-number">03</span>
+              <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 7h16v18H8z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m13 12 7 4-7 4v-8Z" fill="currentColor"/><path d="M4 11v15a2 2 0 0 0 2 2h14" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+              <h3>Reklamní varianty</h3>
+              <p>Více délek, úvodů a CTA z jednoho vizuálního základu. Připraveno pro systematické testování.</p>
+              <a class="text-link" href="/sluzby.html#variants">Zjistit více <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="who">
-        <div class="shell who-grid">
-          <figure class="who-visual reveal">
-            <img
-              src="/images/local-boutique.jpg"
-              alt="Pražský butik, produkt na stole a telefon na stativu"
-            />
+      <section class="section" aria-labelledby="fit-title">
+        <div class="shell split-layout">
+          <figure class="split-media" data-reveal="left">
+            <div class="split-media-main"><img src="/images/optimized/local-boutique-1400.webp" srcset="/images/optimized/local-boutique-760.webp 760w, /images/optimized/local-boutique-1400.webp 1400w" sizes="(max-width: 1024px) 94vw, 48vw" width="1400" height="933" loading="lazy" decoding="async" alt="Lokální butik s produkty a telefonem na stativu"></div>
+            <figcaption class="split-media-note"><strong>Bez produkčního dne</strong>Stačí fotografie, logo a krátký brief. Spolupráce proběhne klidně celá online.</figcaption>
           </figure>
           <div>
-            <p class="eyebrow reveal">Pro koho</p>
-            <h2 class="display reveal">Pro značky, které už fotky mají a video jim chybí.</h2>
-            <ul class="who-list">
-              <li class="reveal">
-                <h3>E-shop a produkt</h3>
-                <p>Krém, káva, šperk, oblečení. Katalogové fotky, které vydrží v účtu týdny.</p>
-              </li>
-              <li class="reveal">
-                <h3>Provozovna</h3>
-                <p>Salón, kavárna, obchod. Místo, které chce někdo otevřít — ne televizní znělka.</p>
-              </li>
-              <li class="reveal">
-                <h3>Služba v reklamách</h3>
-                <p>Reality, auto, fitness. Když už inzerujete, video je nejrychlejší obměna.</p>
-              </li>
+            <p class="eyebrow" data-reveal>Pro koho to dává smysl</p>
+            <h2 class="display-md" id="fit-title" data-reveal>Pro značky, které už mají co ukázat. <em>Jen to potřebují rozpohybovat.</em></h2>
+            <ul class="feature-list">
+              <li data-reveal><span>01</span><div><strong>E-shopy &amp; produkty</strong><p>Kosmetika, móda, jídlo, šperky i drobné značky s kvalitními produktovými fotografiemi.</p></div></li>
+              <li data-reveal><span>02</span><div><strong>Lokální provozovny</strong><p>Kavárny, salony, studia a obchody, které potřebují pravidelný obsah bez častého natáčení.</p></div></li>
+              <li data-reveal><span>03</span><div><strong>Služby &amp; osobní značky</strong><p>Reality, beauty, fitness nebo poradenství — všude, kde se musí rychle vysvětlit hodnota.</p></div></li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="offer" id="nabidka">
+      <section class="section section-eucalyptus" aria-labelledby="process-title">
         <div class="shell">
           <div class="section-head">
-            <p class="eyebrow reveal">Nabídka</p>
-            <h2 class="display reveal">Jasná cena. Žádné „uvidíme po schůzce“.</h2>
+            <div><p class="eyebrow" data-reveal>Proces</p><h2 class="display-md" id="process-title" data-reveal>Jasně, rychle, <em>bez produkčního chaosu.</em></h2></div>
+            <p class="text-lead" data-reveal>V každé fázi víte, co se děje, co od vás potřebujeme a kdy uvidíte výsledek.</p>
           </div>
-          <div class="menu">
-            <article class="menu-item reveal">
-              <div class="menu-top">
-                <h3>Start</h3>
-                <p class="sum">4 900 Kč</p>
-              </div>
-              <p>První sada, ať vidíte ruku ateliéru.</p>
-              <ul>
-                <li>3 vertikální videa</li>
-                <li>8–12 sekund</li>
-                <li>1 kolo úprav</li>
-                <li>Soubory do reklam i do profilu</li>
-              </ul>
-              <a class="text-link" href="#kontakt">Vybrat Start</a>
+          <div class="process-grid">
+            <article class="process-step" data-reveal><span class="service-number">01</span><h3>Brief &amp; podklady</h3><p>Pošlete odkaz, fotografie a cíl. Pokud něco chybí, řekneme to dřív, než začneme tvořit.</p><time>Den 0</time></article>
+            <article class="process-step" data-reveal data-reveal-delay="1"><span class="service-number">02</span><h3>Kreativní směr</h3><p>Navrhneme sdělení, tempo, text a vizuální logiku první sady.</p><time>Den 1</time></article>
+            <article class="process-step" data-reveal data-reveal-delay="2"><span class="service-number">03</span><h3>Tvorba &amp; kontrola</h3><p>Rozpohybujeme fotografie, doplníme typografii a zkontrolujeme každý export.</p><time>Den 2–4</time></article>
+            <article class="process-step" data-reveal data-reveal-delay="3"><span class="service-number">04</span><h3>Předání &amp; úpravy</h3><p>Dostanete náhled, zapracujeme domluvené kolo úprav a předáme hotové soubory.</p><time>Obvykle do 5 dnů</time></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-peach" id="cenik" aria-labelledby="pricing-title">
+        <div class="shell">
+          <div class="pricing-intro">
+            <div><p class="eyebrow" data-reveal>Orientační ceník</p><h2 class="display-md" id="pricing-title" data-reveal>Vyberte rozsah. <em>Ne překvapení.</em></h2></div>
+            <p class="text-lead" data-reveal>Každou poptávku nejdřív potvrdíme podle kvality podkladů a náročnosti zpracování.</p>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card" data-reveal>
+              <span class="price-chip">Na vyzkoušení</span><h3>Start</h3><p>První kompaktní sada pro jeden produkt nebo službu.</p><div class="price">4 900 Kč</div>
+              <ul><li>3 vertikální videa</li><li>Délka 8–12 sekund</li><li>České texty a titulky</li><li>1 kolo úprav</li><li>Export 1080 × 1920 px</li></ul>
+              <a class="btn btn-outline" href="/kontakt.html?balicek=start">Poptat Start</a><p class="price-note">Orientační cena za kompletní sadu.</p>
             </article>
-            <article class="menu-item is-featured reveal">
-              <p class="ribbon">Nejčastěji</p>
-              <div class="menu-top">
-                <h3>Studio</h3>
-                <p class="sum">8 900 Kč</p>
-              </div>
-              <p>Dostatek variant na první test v účtu.</p>
-              <ul>
-                <li>6 videí, 2 textové varianty</li>
-                <li>Popisky k příspěvkům</li>
-                <li>2 kolá úprav</li>
-                <li>Dodání do 5 dnů</li>
-              </ul>
-              <a class="btn btn-primary" href="#kontakt">Vybrat Studio</a>
+            <article class="price-card is-featured" data-reveal data-reveal-delay="1">
+              <span class="price-chip">Nejlepší poměr</span><h3>Studio</h3><p>Dostatek výstupů a variant pro první smysluplný test.</p><div class="price">8 900 Kč</div>
+              <ul><li>6 vertikálních videí</li><li>2 varianty úvodního hooku</li><li>Texty a popisky k publikaci</li><li>2 kola úprav</li><li>Dodání obvykle do 5 dnů</li></ul>
+              <a class="btn btn-primary" href="/kontakt.html?balicek=studio">Poptat Studio</a><p class="price-note">Nejčastější volba pro první kampaň.</p>
             </article>
-            <article class="menu-item reveal">
-              <div class="menu-top">
-                <h3>Péče</h3>
-                <p class="sum">14 900 Kč<span> / měsíc</span></p>
-              </div>
-              <p>Pravidelná obměna, než se reklama unaví.</p>
-              <ul>
-                <li>8 videí měsíčně</li>
-                <li>Nové hooky podle toho, co běží</li>
-                <li>Krátká zpráva, co spustit</li>
-                <li>Přednostní termín</li>
-              </ul>
-              <a class="text-link" href="#kontakt">Vybrat Péči</a>
+            <article class="price-card" data-reveal data-reveal-delay="2">
+              <span class="price-chip">Pravidelně</span><h3>Péče</h3><p>Průběžná obměna kreativ pro značky, které publikují a inzerují.</p><div class="price">od 14 900 Kč <small>/ měsíc</small></div>
+              <ul><li>8 videí každý měsíc</li><li>Nové hooky a varianty</li><li>Průběžný kreativní směr</li><li>Prioritní kapacita</li><li>Krátké doporučení k nasazení</li></ul>
+              <a class="btn btn-outline" href="/kontakt.html?balicek=pece">Poptat Péči</a><p class="price-note">Rozsah nastavíme podle vašeho tempa.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="faq" id="otazky">
-        <div class="shell faq-wrap">
-          <p class="eyebrow reveal">Otázky</p>
-          <h2 class="display reveal">Máte otázky? Máme odpovědi.</h2>
-          <div class="faq-list">
-            <details class="faq-item reveal" open>
-              <summary><span>01</span> Potřebujeme kameru, herce nebo studio?</summary>
-              <p>
-                Ne. Stačí fotky, které už máte. Když budete chtít i klasické UGC —
-                někdo do kamery s produktem — natočíme to telefonem zvlášť. Není to podmínka.
-              </p>
-            </details>
-            <details class="faq-item reveal">
-              <summary><span>02</span> Jaké fotky poslat, aby to vypadalo dobře?</summary>
-              <p>
-                Ostře, ideálně víc úhlů. Bílé e-shopové pozadí jde použít, životní záběr
-                je ještě lepší. Logo a etiketa ať jsou čitelné — u těch hlídáme každý snímek.
-              </p>
-            </details>
-            <details class="faq-item reveal">
-              <summary><span>03</span> Bude video označené, že ho dělala AI?</summary>
-              <p>
-                Ano. U realistického reklamního obsahu v EU to od srpna 2026 patří k pravidlům.
-                Označení dáme tak, aby nepřekáželo. Neslibujeme záznam z prodejny, když jím není.
-              </p>
-            </details>
-            <details class="faq-item reveal">
-              <summary><span>04</span> Hodí se to i malé firmě z okolí?</summary>
-              <p>
-                Právě pro ni. Když už dáváte peníze do Instagramu nebo Facebooku
-                a nemáte nové video každý týden, tohle je nejrychlejší cesta bez natáčecího dne.
-              </p>
-            </details>
-            <details class="faq-item reveal">
-              <summary><span>05</span> Umíte i nasadit reklamu, nebo jen video?</summary>
-              <p>
-                Základ je video. Nasazení do účtu patří k Péči. Máte-li vlastního správce,
-                předáme soubory tak, aby je jen nahrál.
-              </p>
-            </details>
-            <details class="faq-item reveal">
-              <summary><span>06</span> Kde jste a jak to probíhá?</summary>
-              <p>
-                Praha, na dálku i osobně. Ozvete se, pošlete fotky, odsouhlasíme směr
-                a do pěti dnů máte první sadu.
-              </p>
-            </details>
+      <section class="section section-dark" aria-labelledby="quality-title">
+        <div class="shell assurance-grid">
+          <div>
+            <p class="eyebrow" data-reveal>Standard Kriessha</p>
+            <h2 class="display-md" id="quality-title" data-reveal>Každý export projde <em>lidskou kontrolou.</em></h2>
+            <p class="text-lead" data-reveal>Hlídáme čitelnost, bezpečné zóny rozhraní, rytmus i pravdivost sdělení. AI je nástroj — odpovědnost za výsledek zůstává na nás.</p>
+          </div>
+          <div class="assurance-list">
+            <article class="assurance-item" data-reveal><strong>9:16</strong><h3>Bezpečné zóny</h3><p>Text nekoliduje s prvky rozhraní Reels ani Stories.</p></article>
+            <article class="assurance-item" data-reveal data-reveal-delay="1"><strong>1080p</strong><h3>Čistý export</h3><p>Správné rozlišení, kodek a délka pro běžné reklamní systémy.</p></article>
+            <article class="assurance-item" data-reveal><strong>100 %</strong><h3>Kontrola značky</h3><p>Logo, barvy, etikety a typografie se kontrolují před předáním.</p></article>
+            <article class="assurance-item" data-reveal data-reveal-delay="1"><strong>EU</strong><h3>Transparentní AI</h3><p>U syntetického realistického obsahu počítáme s odpovídajícím označením.</p></article>
           </div>
         </div>
       </section>
 
-      <section class="finale" id="kontakt">
-        <div class="finale-media" aria-hidden="true">
-          <img src="/images/cta-portrait.jpg" alt="" />
-        </div>
-        <div class="shell finale-grid">
-          <div class="finale-copy">
-            <p class="eyebrow reveal">Začneme</p>
-            <h2 class="display reveal">Pošlete fotky. Ozveme se s termínem.</h2>
-            <p class="section-lead reveal">
-              Napište, kdo jste a co prodáváte. Odkaz na e-shop nebo Instagram
-              urychlí odhad. Odpovídáme do dvou pracovních dnů.
-            </p>
+      <section class="section" id="faq" aria-labelledby="faq-title">
+        <div class="shell faq-layout">
+          <div class="faq-intro">
+            <p class="eyebrow" data-reveal>Časté otázky</p>
+            <h2 class="display-md" id="faq-title" data-reveal>Než pošlete <em>první fotku.</em></h2>
+            <p class="text-lead" data-reveal>Nenašli jste odpověď? Napište nám kontext a ozveme se s konkrétním doporučením.</p>
+            <a class="text-link" href="/kontakt.html">Zeptat se na projekt <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
           </div>
-          <form class="contact-form reveal" data-form novalidate>
-            <label>
-              Jméno
-              <input type="text" name="name" autocomplete="name" required />
-            </label>
-            <label>
-              Firma
-              <input type="text" name="company" autocomplete="organization" />
-            </label>
-            <label>
-              E-mail
-              <input type="email" name="email" autocomplete="email" required />
-            </label>
-            <label>
-              Web nebo Instagram
-              <input type="url" name="site" placeholder="https://" />
-            </label>
-            <label class="full">
-              Co potřebujete
-              <textarea
-                name="message"
-                rows="4"
-                required
-                placeholder="Produkt, kolik fotek máte, kam to chcete pustit…"
-              ></textarea>
-            </label>
-            <button class="btn btn-primary full" type="submit">
-              <span>Odeslat poptávku</span>
-            </button>
-            <p class="form-note" data-form-note>
-              Soukromá ukázka ateliéru. Schránku napojíme, až půjdeme naostro.
-            </p>
-          </form>
+          <div class="faq-list" data-accordion>
+            <details class="faq-item" open data-reveal><summary><span>01</span>Jaké fotografie jsou pro zpracování nejlepší?</summary><p>Ostré, v co nejvyšším rozlišení a ideálně z více úhlů. Fungují katalogové fotografie i lifestylové záběry. Před začátkem podklady projdeme a řekneme, co lze reálně vytvořit.</p></details>
+            <details class="faq-item" data-reveal><summary><span>02</span>Potřebujeme kameru, modelku nebo studio?</summary><p>Ne. Základní služba pracuje s fotografiemi, které už máte. Pokud by byl nový záběr pro výsledek zásadní, doporučíme ho předem — nic nepřidáváme do rozpočtu bez domluvy.</p></details>
+            <details class="faq-item" data-reveal><summary><span>03</span>Je v ceně hudba a titulky?</summary><p>České texty a titulky ano. Hudbu volíme z legálně použitelných zdrojů podle konkrétního způsobu nasazení. Pro reklamy a organický obsah se mohou licenční podmínky lišit.</p></details>
+            <details class="faq-item" data-reveal><summary><span>04</span>Jak probíhají úpravy?</summary><p>Dostanete náhled a připomínky sesbíráme v jednom kole. Počet kol se řídí balíčkem. Změna původně schváleného směru se nacení zvlášť, vždy předem.</p></details>
+            <details class="faq-item" data-reveal><summary><span>05</span>Používáte při tvorbě AI?</summary><p>Podle zadání používáme kombinaci motion designu, střihu a generativních nástrojů. Nikdy nepředstíráme skutečnou událost nebo vlastnost produktu. U realistického syntetického obsahu navrhneme vhodné označení.</p></details>
+            <details class="faq-item" data-reveal><summary><span>06</span>Umíte reklamy také spustit?</summary><p>Hlavní službou je tvorba kreativ. Základní doporučení k nasazení umíme dodat; správa reklamního účtu není automatickou součástí balíčků a domlouvá se samostatně.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section" aria-labelledby="cta-title">
+        <div class="shell cta-inner">
+          <div class="cta-copy">
+            <p class="eyebrow" data-reveal>Začneme?</p>
+            <h2 class="display-lg" id="cta-title" data-reveal>Vaše fotky už máte. <em>Teď jim dejme pohyb.</em></h2>
+            <p class="text-lead" data-reveal>Pošlete odkaz na značku a krátce popište, co potřebujete. Ozveme se s doporučením rozsahu.</p>
+          </div>
+          <div class="cta-meta" data-reveal>
+            <a class="btn btn-primary" href="/kontakt.html">Nezávazně poptat projekt <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+            <p>Odpověď obvykle do 2 pracovních dnů.</p>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="shell footer-top">
-        <div>
-          <a class="wordmark" href="#top">
-            <img src="/images/favicon-source.png" alt="" width="32" height="32" />
-            Kriessha
-          </a>
-          <p class="footer-tag">Z fotek krátká videa na Instagram a Facebook.</p>
-        </div>
-        <div>
-          <p class="footer-label">Ateliér</p>
-          <p>Praha</p>
-          <p>Česky · osobně</p>
-        </div>
-        <div>
-          <p class="footer-label">Mapa</p>
-          <a href="#atelier">Ateliér</a>
-          <a href="#jak">Metoda</a>
-          <a href="#prace">Práce</a>
-          <a href="#nabidka">Nabídka</a>
-        </div>
-        <div>
-          <p class="footer-label">Kontakt</p>
-          <a href="#kontakt">Napsat nám</a>
-          <a href="#otazky">Otázky</a>
-        </div>
-      </div>
-      <div class="shell footer-base">
-        <span>© <span data-year></span> Kriessha</span>
-        <span>Soukromá ukázka · barvy z brand palety</span>
-      </div>
-    </footer>
+    <div data-site-footer></div>
+    <noscript><p class="noscript-message">Pro plnou funkčnost menu a formuláře prosím povolte JavaScript.</p></noscript>
   </body>
 </html>
