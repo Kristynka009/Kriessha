@@ -37,20 +37,11 @@ Vite sestaví všech 11 HTML vstupů definovaných ve `vite.config.js`.
 
 ## Nasazení na web (GitHub Pages)
 
-Repozitář obsahuje připravený deploy workflow `Documentation/deploy/github-pages.yml`. Kvůli oprávněním GitHub App ho sandbox nemůže nahrát přímo do `.github/workflows/`, proto je potřeba jednorázově přesunout:
+Nasazuje `.github/workflows/deploy.yml` (build na Node 24, artefakt z `dist/`, publikace přes `deploy-pages`). Žádný ruční přesun souborů ani druhá kopie workflow už se nedělá — podrobnosti a tabulka chyb jsou v [`Documentation/deploy/README.md`](Documentation/deploy/README.md).
 
-```bash
-mkdir -p .github/workflows
-mv Documentation/deploy/github-pages.yml .github/workflows/deploy.yml
-git add -A && git commit -m "Deploy workflow na GitHub Pages" && git push
-```
+Jednorázově musí vlastník repozitáře povolit: **Settings → Pages → Source: GitHub Actions** a **Settings → Actions → General → Workflow permissions → Read and write permissions**.
 
-Potom:
-
-1. po sloučení do `main` se workflow automaticky spustí — build a nasazení,
-2. web poběží na `https://kristynka009.github.io/Kriessha/`,
-3. workflow se sám pokusí zapnout Pages se zdrojem **GitHub Actions**; pokud ne, zapněte ručně v **Settings → Pages → Source: GitHub Actions**,
-4. všechna URL jsou relativní, takže web funguje i na vlastní doméně — stačí změnit `base` a canonical URL.
+Po sloučení pull requestu do `main` se workflow spustí sám a web je do minuty aktualizovaný na `https://kristynka009.github.io/Kriessha/`. Průběh je vidět v záložce **Actions**, výsledek v **Settings → Pages**.
 
 „Stará verze" se už nezobrazí: všechny assety mají v názvu hash buildu a GitHub Pages cachuje maximálně 10 minut.
 
@@ -74,7 +65,8 @@ src/fonts.css                 @font-face pro samostatně hostované fonty
 src/fonts/                    WOFF2 podsady latin + latin-ext (OFL)
 src/partials/header.html      Statický header (vkládá build)
 src/partials/footer.html      Statický footer (vkládá build)
-Documentation/deploy/github-pages.yml  Deploy workflow (přesune se do .github/workflows)
+.github/workflows/deploy.yml           Deploy workflow (build + publikace Pages)
+Documentation/deploy/README.md         Návod a tabulka chyb nasazení
 Documentation/Brand           Závazná barevná paleta
 ```
 
