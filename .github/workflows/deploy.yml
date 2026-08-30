@@ -17,6 +17,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      # "true" pouze pokud je GitHub Pages pro repozitář skutečně zapnuté.
+      # U privátního repozitáře bez placeného plánu Pages zapnout nelze,
+      # proto se nasazení přeskočí a workflow zůstane zelený.
+      pages-ready: ${{ steps.pages-check.outputs.ready }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -33,18 +38,40 @@ jobs:
       - name: Produkční build
         run: npm run build
 
-      - name: Nastavení stránek
-        uses: actions/configure-pages@v6
-        with:
-          enablement: true
+      - name: Kontrola dostupnosti GitHub Pages
+        id: pages-check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" >/dev/null 2>&1; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "GitHub Pages je zapnuté – web se nasadí."
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=GitHub Pages::Pages není pro tento repozitář zapnuté (privátní repozitář vyžaduje placený plán). Build proběhl, nasazení se přeskakuje. Zapněte Pages v Settings → Pages (Source: GitHub Actions), nebo repozitář zveřejněte."
+          fi
 
-      - name: Nahrání artefaktu
+      - name: Nastavení stránek
+        if: steps.pages-check.outputs.ready == 'true'
+        uses: actions/configure-pages@v6
+
+      - name: Nahrání artefaktu pro Pages
+        if: steps.pages-check.outputs.ready == 'true'
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
+      - name: Nahrání buildu ke stažení
+        if: steps.pages-check.outputs.ready != 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist
+          if-no-files-found: error
+
   deploy:
     needs: build
+    if: needs.build.outputs.pages-ready == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
